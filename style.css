@@ -134,3 +134,8 @@ p.wind {
 div.clicks {
   display: inline-block;
 }
+ footer {
+    text-align:center;
+    font-size:10px;
+    margin-top:-25px;
+ }
