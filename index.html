@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+ </head>
+
+  <body>
+    <div class="container">
+      <div id="city-list">
+        <ul>
+          <li class="city"><a class="london" href="#"> London</a></li>
+          <li class="city"><a class="paris" href="#"> Paris</a></li>
+          <li class="city"><a class="warsaw" href="#"> Warsaw</a></li>
+          <li class="city"><a class="new-york" href="#">New York</a></li>
+          <li class="city"><a class="tokyo" href="#">Tokyo</a></li>
+        </ul>
+      </div>
+      <form>
+        <div class="clicks">
+          <div class="input-group">
+            <input
+              class="clicks-txt"
+              type="text"
+              placeholder="Enter the city"
+              id="city-input"
+            />
+            <button
+              class="btn btn-secondary clicks"
+              id="submit-btn"
+              type="submit"
+            >
+              Search
+            </button>
+            <button
+              class="btn btn-secondary clicks"
+              id="local-btn"
+              type="submit"
+            >
+              Current
+            </button>
+          </div>
+        </div>
+      </form>
+      <div class="main-place">
+        <h1>Poznan</h1>
+      </div>
+      <div class="calendar">
+        <time id="current-date"></time>
+        <br />
+        <time id="current-time"></time>
+      </div>
+      <br />
+
+      <div class="icon-sky">
+        <p class="icon-sky" id="iconSky">15</p>
+        <a id="tempCelcius" href="#">°C</a>/<a id="tempFahr" href="#">°F</a>
+      </div>
+
+      <div class="wind">
+        Wind 💨: ↗ 4 km/h <br />
+        Precipitation 💧: 45%
+      </div>
+
+      <div class="weather">
+        <div class="row">
+          <div class="col">
+            <div class="sunset">
+              <div class="card-body">
+                <h5 class="day">Tue</h5>
+                <p class="card-text">
+                  🌥 <br />
+                  20°C/13°C
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="sunset">
+              <div class="card-body">
+                <h5 class="day">Wed</h5>
+                <p class="card-text">
+                  🌤 <br />
+                  23°C/10°C
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="sunset">
+              <div class="card-body">
+                <h5 class="day">Thu</h5>
+                <p class="card-text">
+                  🌤 <br />
+                  24°C/11°C
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="sunset">
+              <div class="card-body">
+                <h5 class="day">Fri</h5>
+                <p class="card-text">
+                  ☀ <br />
+                  27°C/14°C
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="sunset">
+              <div class="card-body">
+                <h5 class="day">Sat</h5>
+                <p class="card-text">
+                  🌩 <br />
+                  29°C/16°C
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="script.js"></script>
+</html>
