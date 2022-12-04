@@ -1,5 +1,4 @@
-h1 = document.querySelector("h1");
-// gives the real time and date
+
 let now = new Date();
 let days = [
   "Sunday",
@@ -39,7 +38,7 @@ function changeTime() {
 }
 changeTime();
 
-// changes temperature from celcius to fahrenheit
+
 let celcius = 15;
 let fahrenheit = (celcius * 9) / 5 + 32;
 function changeFahrenheit() {
@@ -49,7 +48,7 @@ function changeFahrenheit() {
 
 let fahr = document.querySelector("#tempFahr");
 fahr.addEventListener("click", changeFahrenheit);
-// changes temperature from fahrenheit to celcius
+
 
 function changeCelcius() {
   p = document.querySelector("#iconSky");
@@ -59,7 +58,7 @@ function changeCelcius() {
 let celc = document.querySelector("#tempCelcius");
 celc.addEventListener("click", changeCelcius);
 
-// change the city from the form
+let h1= document.querySelector("h1");
 
 function changeList(event) {
   h1.innerHTML = event.target.innerHTML.trim();
@@ -68,8 +67,6 @@ let places = document.querySelectorAll("ul>li");
 places.forEach(function (place) {
   return place.addEventListener("click", changeList);
 });
-
-// change the weather with geolocation
 
 function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
@@ -85,16 +82,16 @@ function localChange(position) {
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(url).then(showWeather);
 }
-;
 
-let localBtn = document.querySelector("#local-btn");
-localBtn.addEventListener(
+let localButton = document.querySelector("#local-btn");
+localButton.addEventListener(
   "click",
  function(){navigator.geolocation.getCurrentPosition(localChange)});
 
- // change the city from the form
 
-function changeCity() {
+function changeCity(event) {
+  event.preventDefault();
+
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let input = document.querySelector("#city-input");
   let city = input.value;
@@ -109,9 +106,9 @@ function newWeather(response) {
   iconSky.innerHTML = `${temperature}`;
 }
 
-  let submitBtn = document.querySelector("#submit-btn");
-  submitBtn.addEventListener(
-    "click", changeCity);
-    let form = document.querySelector("form");
-    form.addEventListener(
-      "submit", changeCity);
+let submitBtn = document.querySelector("#submit-btn");
+submitBtn.addEventListener(
+  "click", changeCity);
+  let form = document.querySelector("form");
+  form.addEventListener(
+    "submit", changeCity);
