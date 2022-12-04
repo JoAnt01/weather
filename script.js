@@ -69,10 +69,7 @@ places.forEach(function (place) {
   return place.addEventListener("click", changeList);
 });
 
-// exercise
-
-
-
+// change the weather with geolocation
 
 function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
@@ -112,7 +109,9 @@ function newWeather(response) {
   iconSky.innerHTML = `${temperature}`;
 }
 
-let submitBtn = document.querySelector("#submit-btn");
-submitBtn.addEventListener(
-  "click", changeCity);
-
+  let submitBtn = document.querySelector("#submit-btn");
+  submitBtn.addEventListener(
+    "click", changeCity);
+    let form = document.querySelector("form");
+    form.addEventListener(
+      "submit", changeCity);
