@@ -39,26 +39,6 @@ function changeTime() {
 changeTime();
 
 
-let celcius = 15;
-let fahrenheit = (celcius * 9) / 5 + 32;
-function changeFahrenheit() {
-  let p = document.querySelector("#iconSky");
-  p.innerHTML = fahrenheit;
-}
-
-let fahr = document.querySelector("#tempFahr");
-fahr.addEventListener("click", changeFahrenheit);
-
-
-function changeCelcius() {
-  p = document.querySelector("#iconSky");
-  p.innerHTML = celcius;
-}
-
-let celc = document.querySelector("#tempCelcius");
-celc.addEventListener("click", changeCelcius);
-
-let h1= document.querySelector("h1");
 
 function changeList(event) {
   h1.innerHTML = event.target.innerHTML.trim();
@@ -73,6 +53,17 @@ function showWeather(response) {
   h1.innerHTML = `${response.data.name}`;
   let iconSky = document.querySelector("#iconSky");
   iconSky.innerHTML = `${temperature}`;
+  let descriptionSky = document.querySelector ("#sun-description");
+  descriptionSky.innerHTML = response.data.weather[0].description;
+  let humidity =document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
+  let pressure = document.querySelector("#pressure");
+  pressure.innerHTML = response.data.main.pressure;
+  let speedWind = document.querySelector("#speedWind");
+  speedWind.innerHTML = response.data.wind.speed;
+  let SunnyDay = document.querySelector("#icon");
+  SunnyDay.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+  celciusTemperature = Math.round(response.data.main.temp);
 }
 
 function localChange(position) {
@@ -99,16 +90,52 @@ function changeCity(event) {
   axios.get(url).then(newWeather);
   h1.innerHTML = city;
 }
-
+     
 function newWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   let iconSky = document.querySelector("#iconSky");
   iconSky.innerHTML = `${temperature}`;
+  let descriptionSky = document.querySelector ("#sun-description");
+  descriptionSky.innerHTML = response.data.weather[0].description;
+  let humidity =document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
+  let pressure = document.querySelector("#pressure");
+  pressure.innerHTML = response.data.main.pressure;
+  let speedWind = document.querySelector("#speedWind");
+  speedWind.innerHTML = response.data.wind.speed;
+  let SunnyDay = document.querySelector("#icon");
+  SunnyDay.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+  
+  celciusTemperature = Math.round(response.data.main.temp);
 }
-
-let submitBtn = document.querySelector("#submit-btn");
-submitBtn.addEventListener(
-  "click", changeCity);
   let form = document.querySelector("form");
-  form.addEventListener(
-    "submit", changeCity);
+  form.addEventListener("submit", changeCity);
+
+let celciusTemperature = null;
+  
+  function changeFahrenheit(event) {
+    event.preventDefault();
+let temperatureElement = document.querySelector("#iconSky");
+fahr.classList.add("active");
+celc.classList.remove("active");
+
+let Fahrenheit = (celciusTemperature * 9) / 5 + 32;
+    temperatureElement.innerHTML =Math.round(Fahrenheit);
+  }
+  
+  let fahr = document.querySelector("#tempFahr");
+  fahr.addEventListener("click", changeFahrenheit);
+  
+  
+  function changeCelcius(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#iconSky");
+    temperatureElement.innerHTML = celciusTemperature;
+    celc.classList.add("active");
+fahr.classList.remove("active");
+  }
+  
+  let celc = document.querySelector("#tempCelcius");
+  celc.addEventListener("click", changeCelcius);
+  
+  let h1= document.querySelector("h1");

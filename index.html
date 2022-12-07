@@ -30,7 +30,7 @@
         <div class="clicks">
           <div class="input-group">
             <input
-              class="clicks-txt"
+              class="form-control"
               type="text"
               placeholder="Enter the city"
               id="city-input"
@@ -40,20 +40,21 @@
               id="submit-btn"
               type="submit"
             >
-              Search
+              Search 🔎
             </button>
+
             <button
               class="btn btn-secondary clicks"
               id="local-btn"
               type="button"
             >
-              Current
+            Current 🗺️
             </button>
           </div>
         </div>
       </form>
       <div class="main-place">
-        <h1>Poznan</h1>
+       <strong><h1>Search for a city</h1></strong>
       </div>
       <div class="calendar">
         <time id="current-date"></time>
@@ -63,13 +64,22 @@
       <br />
 
       <div class="icon-sky">
-        <p class="icon-sky" id="iconSky">15</p>
-        <a id="tempCelcius" href="#">°C</a>/<a id="tempFahr" href="#">°F</a>
+        <div class="row">
+        <div class="col-6">
+        <p id="sunny-day"> <img src="" id="icon"/> <br  /><span id="sun-description">   </span></p>
+     </div> 
+     <div class="col-6" id="temperature"> 
+       <p class="icon-sky" id="iconSky">    </p> <a id="tempCelcius" href="#" class="active">°C</a>
+       / <a id="tempFahr" href="#">°F</a>
       </div>
-
+        </div>
+      </div>
+<br />
       <div class="wind">
-        Wind 💨: ↗ 4 km/h <br />
-        Precipitation 💧: 45%
+      <p>  Wind 💨: <span id="speedWind"> </span> km/h <br />
+        Humidity 💧: <span id="humidity"></span> </span>% 
+        <br  /> 
+        Pressure 🩺: <span id="pressure"></span> hPa </p>
       </div>
 
       <div class="weather">
@@ -131,10 +141,12 @@
             </div>
           </div>
         </div>
+       
       </div>
-    </div>
-    <footer>
-        <a href="https://github.com/JoAnt01/weather">Open-source code</a> by Joanna Antkiewicz </footer>
+    </div> <footer>
+            <a href="https://github.com/JoAnt01/weather">Open-source code</a> by Joanna Antkiewicz </footer>
   </body>
-  <script type="text/javascript" src="script.js"></script>
+  
+  <script 
+  type="text/javascript" src="script.js"></script>
 </html>
