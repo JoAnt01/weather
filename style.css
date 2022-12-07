@@ -8,8 +8,8 @@ body {
 
 .container {
   position: relative;
-  background: linear-gradient(to top, transparent, rgb(245, 252, 255)),
-    url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/044/original/3D_render-28327.jpg?1668547153");
+  background: 
+    url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/057/035/original/slonce.jpg?1670451235");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -84,20 +84,21 @@ p.wind {
 }
 
 .wind {
-  margin-top:20px;
+  margin-top:30px;
   position: absolute;
-  bottom: 30%;
+  bottom: 25%;
   right: 30%;
   color: black;
 }
 
 .icon-sky {
   position: relative;
-line-height: 80%;
+line-height: 25px;
   margin-top:20px;
   font-size: 30px;
   text-align: center;
   display: block;
+  
 }
 
 .main-place {
@@ -159,6 +160,7 @@ h1 {
   margin-left: 40px;
   margin-top: -10px;
   position: absolute;
+  line-height: 0px;
  
 }
 
