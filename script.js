@@ -38,8 +38,6 @@ function changeTime() {
 }
 changeTime();
 
-
-
 function changeList(event) {
   h1.innerHTML = event.target.innerHTML.trim();
 }
@@ -91,6 +89,17 @@ function changeCity(event) {
   h1.innerHTML = city;
 }
      
+function changeTopCity (){
+let h1= document.querySelector("h1");
+let city = "Poznań"; 
+h1.innerHTML = city;
+let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+axios.get(url).then(newWeather);
+
+}
+changeTopCity();
+
 function newWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   let iconSky = document.querySelector("#iconSky");
